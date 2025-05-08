@@ -54,7 +54,6 @@ func (p *Prompt) AddUserInput(input string) *Prompt {
 func (p *Prompt) AddResponseStruct() *Prompt {
 	prompt := `return git commit message using this JSON schema:
 	           Return {
-				 "msg":string
 			   	 "cmd": []string
 			   }`
 	p.Struct = append(p.Struct, prompt)
