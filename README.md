@@ -11,6 +11,7 @@ cmdg (Command Generator) is a command-line interface tool that converts natural 
 ```bash
 go install github.com/beriholic/cmdg@latest
 ```
+> Make sure `fastfetch` is installed before installation
 
 ## Usage
 
@@ -25,13 +26,10 @@ Here are examples of different complexity levels:
 ### Simple Tasks
 Basic file and directory operations:
 ```bash
-# List files in current directory
 cmdg -c "show all files in current directory"
 
-# Create a new directory
 cmdg -c "create a new folder named projects"
 
-# Check disk space usage
 cmdg -c "show disk space usage"
 ```
 
