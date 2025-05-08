@@ -13,7 +13,7 @@ var versionCmd = &cobra.Command{
 	Short: "print the version of the cmdg",
 	Long:  `print the version of the cmdg`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("geminic version %s\n", verison)
+		fmt.Printf("cmdg version %s\n", verison)
 	},
 }
 
