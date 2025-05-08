@@ -4,16 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/beriholic/cmdg/internal/system"
+	"github.com/beriholic/cmdg/internal/service"
 )
 
 func GeneratorCommand(ctx context.Context, input string) error {
-	system, err := system.GetSystemInfo()
-
-	if err != nil {
-		return err
-	}
-	fmt.Println(system)
+	prompt := service.NewPrompt().Build(input)
+	fmt.Println(prompt)
 	return nil
-
 }
