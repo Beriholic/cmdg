@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/beriholic/cmdg/internal/system"
+	"github.com/Beriholic/cmdg/internal/system"
 )
 
 type Prompt struct {

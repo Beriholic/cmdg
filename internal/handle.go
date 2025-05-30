@@ -8,9 +8,9 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/beriholic/cmdg/internal/config"
-	"github.com/beriholic/cmdg/internal/service"
-	"github.com/beriholic/cmdg/internal/ui"
+	"github.com/Beriholic/cmdg/internal/config"
+	"github.com/Beriholic/cmdg/internal/service"
+	"github.com/Beriholic/cmdg/internal/ui"
 	"github.com/charmbracelet/huh"
 )
 

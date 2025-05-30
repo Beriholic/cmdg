@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/beriholic/cmdg/internal/config"
+	"github.com/Beriholic/cmdg/internal/config"
 	"google.golang.org/genai"
 )
 

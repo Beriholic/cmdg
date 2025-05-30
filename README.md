@@ -9,7 +9,7 @@ cmdg (Command Generator) is a command-line interface tool that converts natural 
 ## Installation
 
 ```bash
-go install github.com/beriholic/cmdg@latest
+go install github.com/Beriholic/cmdg@latest
 ```
 > Make sure `fastfetch` is installed before installation
 

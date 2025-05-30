@@ -1,4 +1,4 @@
-module github.com/beriholic/cmdg
+module github.com/Beriholic/cmdg
 
 go 1.23.7
 
