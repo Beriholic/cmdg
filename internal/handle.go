@@ -8,7 +8,9 @@ import (
 	"runtime"
 	"strings"
 
+	"github.com/beriholic/cmdg/internal/config"
 	"github.com/beriholic/cmdg/internal/service"
+	"github.com/beriholic/cmdg/internal/ui"
 	"github.com/charmbracelet/huh"
 )
 
@@ -63,6 +65,24 @@ func ExecutorCommand(cmds []string) error {
 		if err != nil {
 			return err
 		}
+	}
+
+	return nil
+}
+
+func UpdateGeminiModelSelect(ctx context.Context) error {
+	geminiService, err := service.NewGeminiServer(ctx, "")
+	if err != nil {
+		return err
+	}
+	models := geminiService.ListModels(ctx)
+	model, err := ui.RenderStringsSelect(models)
+	if err != nil {
+		return err
+	}
+
+	if err = config.SetModel(model); err != nil {
+		return err
 	}
 
 	return nil

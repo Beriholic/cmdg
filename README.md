@@ -13,6 +13,16 @@ go install github.com/beriholic/cmdg@latest
 ```
 > Make sure `fastfetch` is installed before installation
 
+## Config
+
+```bash
+cmdg config
+```
+
+```bash
+cmdg models
+```
+
 ## Usage
 
 ```bash

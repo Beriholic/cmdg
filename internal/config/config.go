@@ -96,3 +96,16 @@ func load() *CmdgConfig {
 		Model: viper.GetString("model"),
 	}
 }
+func SetModel(model string) error {
+	expandedPath := os.ExpandEnv(configFilePath)
+
+	viper.SetConfigFile(expandedPath)
+
+	if err := viper.ReadInConfig(); err != nil {
+		fmt.Printf("Failed to read config file: %v\n", err)
+		return nil
+	}
+
+	viper.Set("model", model)
+	return nil
+}
