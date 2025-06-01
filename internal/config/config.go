@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync"
 
 	"github.com/charmbracelet/huh"
@@ -50,7 +51,9 @@ func Create() error {
 	}
 
 	viper.SetConfigFile(expandedPath)
-	_ = viper.ReadInConfig()
+	if err := viper.ReadInConfig(); err != nil {
+		return fmt.Errorf("failed to red config file: %v", err)
+	}
 
 	keyState := viper.GetString("key")
 	modelState := viper.GetString("model")
@@ -98,14 +101,15 @@ func load() *CmdgConfig {
 }
 func SetModel(model string) error {
 	expandedPath := os.ExpandEnv(configFilePath)
-
 	viper.SetConfigFile(expandedPath)
 
-	if err := viper.ReadInConfig(); err != nil {
-		fmt.Printf("Failed to read config file: %v\n", err)
-		return nil
-	}
+	model = strings.TrimPrefix(model, "models/")
 
 	viper.Set("model", model)
+
+	if err := viper.WriteConfigAs(expandedPath); err != nil {
+		return fmt.Errorf("failed to write config file: %v", err)
+	}
+	fmt.Printf("Configuration saved to %s\n", expandedPath)
 	return nil
 }
